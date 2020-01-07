@@ -1,5 +1,7 @@
 package com.zhengbing.bio;
 
+import com.zhengbing.utils.SocketUtils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -41,7 +43,7 @@ public class ServerHandler implements Runnable {
         }catch (IOException e){
             e.printStackTrace();
         }finally {
-            SocketUtils.closeed(in,out,socket);
+            SocketUtils.closed(in,out,socket);
         }
 
     }

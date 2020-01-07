@@ -1,13 +1,22 @@
-package com.zhengbing.bio;
+package com.zhengbing.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+/**
+ * socket 工具类
+ */
 public class SocketUtils {
 
-    public static void closeed(BufferedReader in, PrintWriter out, Socket socket){
+    /**
+     * socket 关闭相关对象
+     * @param in
+     * @param out
+     * @param socket
+     */
+    public static void closed(BufferedReader in, PrintWriter out, Socket socket){
         if (null!=in){
             try{
                 in.close();

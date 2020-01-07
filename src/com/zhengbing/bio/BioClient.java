@@ -1,10 +1,13 @@
 package com.zhengbing.bio;
 
+import com.zhengbing.utils.SocketUtils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Random;
 
 /**
  * 阻塞式I/O 客户端
@@ -34,11 +37,15 @@ public class BioClient {
         }catch (IOException e){
             e.printStackTrace();
         }finally {
-            SocketUtils.closeed(in,out,socket);
+            SocketUtils.closed(in,out,socket);
         }
     }
 
     public static void main(String[] args) {
-        BioClient.send("黄河黄河");
+        String[] oprates = {"+","-","*","/"};
+        Random random = new Random(System.currentTimeMillis());
+        String oprate = oprates[random.nextInt(4)];
+        String expression = random.nextInt(10)+oprate+random.nextInt(10);
+        BioClient.send(expression);
     }
 }
