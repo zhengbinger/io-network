@@ -47,11 +47,8 @@ public class BioServer {
             while (true) {
                 Socket socket = server.accept();
 
-                BufferedReader in  = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                System.out.println(in.readLine());
-
                 // 当有新客户端连接进来时，新建一个线程来处理该socket的链路
-//                new Thread(new ServerHandler(socket)).start();
+                new Thread(new ServerHandler(socket)).start();
             }
 
         }finally {

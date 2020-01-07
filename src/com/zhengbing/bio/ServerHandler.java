@@ -36,7 +36,7 @@ public class ServerHandler implements Runnable {
                   break;
                 }
                 System.out.println("服务端收到消息："+expression);
-//               result = Calcuator.cal(expression)
+//               result = Calcuator.cal(expression);
                 result = "服务端得到："+expression;
                 out.println(result);
             }

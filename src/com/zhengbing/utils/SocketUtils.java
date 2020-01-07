@@ -12,9 +12,9 @@ public class SocketUtils {
 
     /**
      * socket 关闭相关对象
-     * @param in
-     * @param out
-     * @param socket
+     * @param in   BufferedReader
+     * @param out  PrintWriter
+     * @param socket Socket
      */
     public static void closed(BufferedReader in, PrintWriter out, Socket socket){
         if (null!=in){
