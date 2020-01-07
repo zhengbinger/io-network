@@ -1,6 +1,11 @@
 package com.zhengbing.bio;
 
+import jdk.internal.util.xml.impl.Input;
+
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -10,9 +15,10 @@ import java.net.Socket;
  */
 public class BioServer {
 
-    private static final String SOCKET_SERVER_HOST = "localhost";
-    // 服务端端口号
-    private static final int SOCKET_SERVER_PORT = 9999;
+    /**
+     *     服务端端口号
+     */
+    private static final int SOCKET_SERVER_PORT = 7777;
 
     private static ServerSocket server;
 
@@ -43,8 +49,11 @@ public class BioServer {
             while (true) {
                 Socket socket = server.accept();
 
+                BufferedReader in  = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                System.out.println(in.readLine());
+
                 // 当有新客户端连接进来时，新建一个线程来处理该socket的链路
-                new Thread(new ServerHandler(socket)).start();
+//                new Thread(new ServerHandler(socket)).start();
             }
 
         }finally {
