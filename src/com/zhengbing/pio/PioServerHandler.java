@@ -1,4 +1,4 @@
-package com.zhengbing.bio;
+package com.zhengbing.pio;
 
 import com.zhengbing.utils.SocketUtils;
 
@@ -7,18 +7,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 /**
  * 服务端处理客户端线程处理链路
  * @author zhengbing
  */
-public class ServerHandler implements Runnable {
+public class PioServerHandler implements Runnable {
 
     private Socket socket;
-    String[] quitCommand = {"关闭","shutdown","stop"};
+    private String[] quitCommand = {"关闭","shutdown","stop"};
 
-    public ServerHandler(Socket socket){
+    public PioServerHandler(Socket socket){
         this.socket = socket;
     }
 
@@ -38,14 +39,8 @@ public class ServerHandler implements Runnable {
                   break;
                 }
                 System.out.println("服务端收到消息："+expression);
-                boolean isQuit=Stream.of(quitCommand).anyMatch(expression::equalsIgnoreCase);
-
-                if (isQuit){
-                    SocketUtils.closed(in,out,socket);
-                }else{
-                    result = "服务端得到："+expression;
-                    out.println(result);
-                }
+                result = "服务端得到："+expression;
+                out.println(result);
             }
         }catch (IOException e){
             e.printStackTrace();
