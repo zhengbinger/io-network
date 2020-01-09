@@ -1,9 +1,7 @@
-package com.zhengbing.bio;
+package com.zhengbing.base.bio;
 
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -43,7 +41,7 @@ public class BioServer {
             server = new ServerSocket(port);
             System.out.println("服务端已启动，端口号：" + port);
 
-            // 通过无限循环用来接收客户端请求，如果没有客户端连接，服务端将一直阻塞再acceptor
+            // 通过无限循环用来接收客户端请求，如果没有客户端连接，服务端将一直阻塞在acceptor
             while (true) {
                 Socket socket = server.accept();
 

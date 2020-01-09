@@ -1,6 +1,6 @@
-package com.zhengbing.bio;
+package com.zhengbing.base.bio;
 
-import com.zhengbing.utils.SocketUtils;
+import com.zhengbing.base.utils.SocketUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.zhengbing.nio;
+package com.zhengbing.base.nio;
 
 import java.io.IOException;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.zhengbing.utils;
+package com.zhengbing.base.utils;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;

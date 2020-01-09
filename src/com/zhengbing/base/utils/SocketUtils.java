@@ -1,4 +1,4 @@
-package com.zhengbing.utils;
+package com.zhengbing.base.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,14 +1,12 @@
-package com.zhengbing.pio;
+package com.zhengbing.base.pio;
 
-import com.zhengbing.utils.SocketUtils;
+import com.zhengbing.base.utils.SocketUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Arrays;
-import java.util.stream.Stream;
 
 /**
  * 服务端处理客户端线程处理链路
