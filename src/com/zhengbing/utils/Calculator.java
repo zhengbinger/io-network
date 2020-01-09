@@ -5,7 +5,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 /**
- * 计算工具类
+ * 计算表达式工具类
  * @author zhengbing_vendor
  * @date 2020/1/9
  **/
