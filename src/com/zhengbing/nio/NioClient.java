@@ -1,5 +1,8 @@
 package com.zhengbing.nio;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 /**
  * NIO 客户端
  * @author zhengbing_vendor
@@ -39,7 +42,7 @@ public class NioClient {
      * @param message String
      * @return boolean
      */
-    public static boolean sendMessage(String message){
+    public static boolean sendMessage(String message) throws IOException {
         if ("q".equals(message)){
             return false;
         }
@@ -49,5 +52,12 @@ public class NioClient {
 
     public static void main(String[] args) {
         start();
+        while(true){
+            try {
+                sendMessage(new Scanner(System.in).nextLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
